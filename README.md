@@ -11,10 +11,10 @@ https://thecoffeecabin-demo.netlify.app/
 ## 📸 Screenshots
 Here are some previews of the site:
 
-1. ![Homepage](screenshots/home.png)
-2. ![Menu Page](screenshots/menu.png)
-3. ![About Section](screenshots/about.png)
-4. ![Contact Page](screenshots/contact.png)
+1. ![Homepage](Screenshots/home.png)
+2. ![Menu Page](Screenshots/menu.png)
+3. ![About Section](Screenshots/about.png)
+4. ![Contact Page](Screenshots/contact.png)
 
 ## 🛠️ Built With
 - HTML5
