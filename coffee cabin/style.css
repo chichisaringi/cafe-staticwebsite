@@ -1,0 +1,358 @@
+/* style.css */
+
+/* Root variables for consistent theming */
+:root {
+    --primary-green: #4A6E4A; /* A darker, rich green */
+    --accent-green: #7BCC7B; /* A lighter, more vibrant green */
+    --primary-brown: #6F4E37; /* A deep, coffee-like brown */
+    --light-brown: #D4B891; /* A creamy, light brown/tan */
+    --off-white: #F8F8F8; /* A very light off-white */
+    --text-dark: #333; /* Dark text for readability */
+    --text-light: #f0f0f0; /* Light text for dark backgrounds */
+}
+
+/* Base styles for body */
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter from Google Fonts */
+    margin: 0;
+    padding: 0;
+    background-color: var(--off-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Global container for content centering and padding */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Add horizontal padding */
+}
+
+/* Headings styles */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif; /* Using Playfair Display for headings */
+    color: var(--primary-brown);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--off-white);
+}
+
+h2 {
+    font-size: 3.5rem;
+    color: var(--text-light); /* White for hero section */
+}
+
+h3 {
+    font-size: 2.8rem;
+    margin-top: 0;
+}
+
+h4 {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    margin-top: 1.5rem;
+}
+
+/* Header styling */
+header {
+    background-color: var(--primary-brown);
+    color: var(--off-white);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky; /* Makes header stick to top */
+    top: 0;
+    z-index: 1000; /* Ensures header is on top of other content */
+}
+
+header .container {
+    display: flex;
+    flex-direction: column; /* Stack on small screens */
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Space between logo and nav on small screens */
+}
+
+header .logo img {
+    height: 40px; /* Adjust logo size */
+    margin-right: 10px;
+    border-radius: 8px; /* Slightly rounded corners for the logo placeholder */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--off-white);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+nav ul li a:hover {
+    color: var(--accent-green);
+}
+
+/* Hero section styling */
+.hero {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Placeholder image for hero. Replace with your actual hero image. */
+    background-image: url('https://placehold.co/1920x1080/6F4E37/F8F8F8?text=Delicious+Coffee+and+Cozy+Atmosphere');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6); /* Slightly darken the image for text readability */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10; /* Ensure content is above the overlay */
+    padding: 20px;
+    max-width: 800px;
+    background-color: rgba(0,0,0,0.3); /* Semi-transparent background for text */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: var(--off-white);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px; /* Pill-shaped button */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+    background-color: var(--accent-green);
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Section common styles */
+.about-section, .menu-section, .contact-section {
+    padding: 80px 0; /* Vertical padding */
+    text-align: center;
+}
+
+.about-section {
+    background-color: var(--off-white);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Space between text and image */
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.about-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Menu Section styling */
+.menu-section {
+    background-color: var(--light-brown); /* Light brown background for menu */
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 30px; /* Space between menu categories */
+    margin-top: 40px;
+}
+
+.menu-category {
+    background-color: var(--off-white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.menu-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-category ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.1); /* Dotted separator */
+    font-size: 1.1rem;
+}
+
+.menu-category ul li:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.menu-category ul li span {
+    font-weight: bold;
+    color: var(--primary-green);
+    white-space: nowrap; /* Prevent price from wrapping */
+    margin-left: 15px; /* Space between item name and price */
+}
+
+/* Contact Section styling */
+.contact-section {
+    background-color: var(--primary-brown);
+    color: var(--off-white);
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-section p i {
+    color: var(--accent-green);
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.social-media {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.social-media a {
+    color: var(--off-white);
+    font-size: 2.5rem;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--accent-green);
+}
+
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+    height: 400px; /* Fixed height for the map */
+    border-radius: 10px;
+    overflow: hidden; /* Ensures map corners are rounded */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove default iframe border */
+}
+
+/* Footer styling */
+footer {
+    background-color: var(--text-dark); /* Dark background for footer */
+    color: var(--light-brown);
+    padding: 30px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsive adjustments */
+@media (min-width: 600px) {
+    header .container {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    header .logo {
+        margin-bottom: 0;
+    }
+
+    nav ul {
+        justify-content: flex-end; /* Align nav items to the right */
+    }
+
+    .about-content {
+        flex-direction: row; /* Side-by-side on larger screens */
+        text-align: left;
+    }
+
+    .about-content img {
+        max-width: 40%; /* Adjust image size in about section */
+    }
+
+    .menu-items {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 or 3 columns on larger screens */
+    }
+}
+
+@media (min-width: 900px) {
+    .menu-items {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+    }
+}
